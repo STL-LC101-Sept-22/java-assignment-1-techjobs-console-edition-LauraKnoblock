@@ -1,7 +1,5 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.lang.reflect.Array;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -10,7 +8,7 @@ public class TechJobs {
 
     static Scanner in = new Scanner(System.in);
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         // Initialize our field map with key/name pairs
         HashMap<String, String> columnChoices = new HashMap<>();
@@ -58,7 +56,7 @@ public class TechJobs {
                 String searchField = getUserSelection("Search by:", columnChoices);
 
                 // What is their search term?
-                System.out.println("\nSearch term:");
+                System.out.println("\nSearch term: \n");
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
@@ -112,7 +110,7 @@ public class TechJobs {
                 validChoice = true;
             }
 
-        } while(!validChoice);
+        } while (!validChoice);
 
         return choiceKeys[choiceIdx];
     }
@@ -120,6 +118,34 @@ public class TechJobs {
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
-        System.out.println("printJobs is not implemented yet");
-    }
-}
+
+        for (HashMap<String, String> jobs : someJobs) {
+//            System.out.println("\n");
+            System.out.println("*****");
+//            System.out.println(jobs.entrySet());
+            for (HashMap.Entry<String, String> job : jobs.entrySet()) {
+                System.out.println(job.getKey() + ": " + job.getValue());
+
+            }
+            System.out.println("*****");
+//            ArrayList<String> keys = new ArrayList<>();
+//            keys.add(Arrays.toString(job.keySet().toArray()));
+//            System.out.println(keys);
+//            for (int i = 0; i < keys.size(); i++) {
+//                System.out.println(keys.get(i) + "\n");
+//                for (int j = 0;
+//                     j < keys.size(); j++) {
+//                    Object[] key = keys.toArray();
+//                    System.out.println(key[j]);
+                }
+//            for (int i =0; i < job.size(); i++) {
+//                System.out.println(someJobs.values().indexOf("employer"));
+
+//                System.out.println("*****" + job.keySet());
+//                System.out.println(keys);
+//                System.out.println(someJobs.get(0).toString());
+//                System.out.println("fin.");
+            }
+        }
+
+
